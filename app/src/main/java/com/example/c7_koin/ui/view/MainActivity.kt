@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity() {
 
                 Status.SUCCESS -> {
                     adapter.submitData(resource.data)
-                    Toast.makeText(this, "Response Sukses : ${resource.data?.get(0)?.title}", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this, "Response Sukses : ${resource.data?.get(0)?.title}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Sukses", Toast.LENGTH_SHORT).show()
                     progressDialog.dismiss()
                 }
                 Status.ERROR -> {

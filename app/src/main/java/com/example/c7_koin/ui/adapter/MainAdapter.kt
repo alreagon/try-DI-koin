@@ -42,7 +42,8 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: GetAllPostsResponseItem) {
             binding.apply {
-                tvTitle.text = data.title
+                tvJudul.text = data.name
+                tvPrice.text = data.price.toString()
             }
         }
     }

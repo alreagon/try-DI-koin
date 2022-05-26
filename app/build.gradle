@@ -20,11 +20,10 @@ android {
     buildTypes {
 
         debug {
-            applicationIdSuffix ".debug" // ini bisa di add di builTypes jg, selain di PF
-            // dibacanya dari PF dulu baru ke buildType, jadi com.example.chapter_7_allminitask.demo.debug
+            applicationIdSuffix ".debug"
             minifyEnabled false
             debuggable true
-            buildConfigField("String", "BASE_URL", "\"https://jsonplaceholder.typicode.com/\"")
+            buildConfigField("String", "BASE_URL", "\"https://rent-cars-api.herokuapp.com/\"")
             buildConfigField("String", "APP_NAME", "\"INI DEBUG\"")
             manifestPlaceholders = [appNameSuffix: "_debug"]
             signingConfig signingConfigs.debug
