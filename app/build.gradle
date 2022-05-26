@@ -18,8 +18,21 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            applicationIdSuffix ".debug" // ini bisa di add di builTypes jg, selain di PF
+            // dibacanya dari PF dulu baru ke buildType, jadi com.example.chapter_7_allminitask.demo.debug
+            minifyEnabled false
+            debuggable true
+            buildConfigField("String", "BASE_URL", "\"https://jsonplaceholder.typicode.com/\"")
+            buildConfigField("String", "APP_NAME", "\"INI DEBUG\"")
+            manifestPlaceholders = [appNameSuffix: "_debug"]
+            signingConfig signingConfigs.debug
+        }
+
         release {
             minifyEnabled false
+            buildConfigField("String", "BASE_URL", "\"https://jsonplaceholder.typicode.com/\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -29,6 +42,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -59,7 +75,6 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
     // Navigation Graph
     implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
-
 
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
